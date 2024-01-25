@@ -14,26 +14,26 @@
         <section id="music">
             <h2>My Music</h2>
             <audio id="mySound" src="doze_off-final_mix.wav" preload="auto"></audio>
-            <button onclick="playSound()">Play Sound</button>
-            <button onclick="pauseAudio()">Pause</button>
-            <button onclick="rewindAudio()">Rewind</button>
+            <button onclick="playSong()">Play Sound</button>
+            <button onclick="pauseSong()">Pause</button>
+            <button onclick="rewindSong()">Rewind</button>
         </section>
     </main>
     <footer>
         <p>© 2024 by Your Name</p>
     </footer>
     <script>
-        function playAudio() {
+        function playSong() {
             var audio = document.getElementById("mySound");
             audio.play();
         }
 
-        function pauseAudio() {
+        function pauseSong() {
             var audio = document.getElementById("mySound");
             audio.pause();
         }
 
-        function rewindAudio() {
+        function rewindSong() {
             var audio = document.getElementById("mySound");
             audio.currentTime = 0;
         }
