@@ -11,16 +11,39 @@
         <h1>Welcome to My Music Page</h1>
     </header>
     <main>
-        <section>
+        <section id="music">
             <h2>My Music</h2>
-            <audio id="mySound" src="C:\Users\Keisun\Documents\GitHub\keisunl1.github.io\doze_off-final_mix.wav" preload="auto"></audio>
-            <button onclick="playSound()">Play Sound</button>
+            <audio id="mySound" src="doze_off-final_mix.wav" preload="auto"></audio>
+            <button onclick="playSong()">Play Sound</button>
+            <button onclick="pauseSong()">Pause</button>
+            <button onclick="rewindSong()">Rewind</button>
+            <label for="volumeControl">Volume:</label>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" onchange="setVolume()">
         </section>
-        
-
     </main>
     <footer>
         <p>© 2024 by Your Name</p>
     </footer>
+    <script>
+        function playSong() {
+            var audio = document.getElementById("mySound");
+            audio.play();
+        }
+
+        function pauseSong() {
+            var audio = document.getElementById("mySound");
+            audio.pause();
+        }
+
+        function rewindSong() {
+            var audio = document.getElementById("mySound");
+            audio.currentTime = 0;
+        }
+        function setVolume() {
+            var audio = document.getElementById("mySound");
+            var volume = document.getElementById("volumeControl").value;
+            audio.volume = volume;
+        }
+    </script>
 </body>
 </html>
